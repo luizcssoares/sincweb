@@ -69,7 +69,7 @@ public class NovaPropostaMB implements Serializable {
     }
 	
 	public void metodoTeste(){
-	    
+	    // vixe maria deu certo
 	}
  	
  	public String selecionaAutor() { 		
