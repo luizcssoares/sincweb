@@ -1,0 +1,38 @@
+<html xmlns="http://www.w3.org/1999/xhtml"  
+    xmlns:h="http://java.sun.com/jsf/html"  
+    xmlns:f="http://java.sun.com/jsf/core"
+    xmlns:ui="http://java.sun.com/jsf/facelets"  
+    xmlns:p="http://primefaces.org/ui">  
+<h:head>  
+   
+</h:head>  
+<body>
+        <h:form id="form">
+            <h:outputText value="Nome" />
+            <h:inputText value="#{novaPropostaMB.autorTO.nome}" />
+            <p:commandButton 
+                     update="myPanel"
+                     value="Filtrar" 
+                     ajax="true"
+                     action="#{novaPropostaMB.buscarAutor}" />
+                     
+            <p:outputPanel id="myPanel">
+	            <p:dataTable  id="tbCliente"                                                   
+	                var="cursor" 
+	                value="#{novaPropostaMB.autoresSelecionados}" 
+	                rendered="#{not empty novaPropostaMB.autoresSelecionados}"											             
+	                style="margin-bottom:0">
+	                <f:facet name="header">
+	                   <h:outputText value="Lista de Autores" />
+	                </f:facet>						
+	                <p:column headerText="Nome" width="50%">					        								        										        						                                          
+			   	       <h:outputText value="#{cursor.nome}" />
+				    </p:column>  
+				    <p:column headerText="Cpf" width="50%">									    
+				   	   <h:outputText value="#{cursor.email}" />
+				    </p:column>				        																																				    															    	        												    											        
+	            </p:dataTable>
+	        </p:outputPanel>       
+        </h:form>
+</body>  
+</html>

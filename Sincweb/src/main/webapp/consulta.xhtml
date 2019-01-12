@@ -1,0 +1,74 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui" template="template.xhtml">
+
+	<ui:define name="content">
+
+    <f:view>
+     <h:form class="ui form" id="frmTabela">
+
+		<div class="ui grid">
+
+			<div class="sixteen wide column">
+				<div class="ui breadcrumb">
+					<a class="section">Início</a> <span class="divider">/</span>
+					<div class="active section">Proposta</div>
+				</div>
+			</div>
+
+			<div class="sixteen wide column">
+                  
+                 <div class="ui card fluid">
+                      <div class="content">                    
+                          <div class="header middle">Informe os DADOS para consultar o Autor</div>                
+                      </div>
+                      <div class="content">
+
+                          <div id="default"></div>
+                                                                                                                                                                                                                                            
+                                 <div class="field">
+								   <label>Nome</label> 
+								   <p:inputText id="nome" value="#{novaPropostaMB.nome}" />								                                                                                                                  
+                                 </div>                                                                                                                    
+                                 <div class="field">  
+                                
+                                    <p:commandButton                 
+                                       id="consultar" 
+                                       value="Pesquisar"
+                                       action="#{novaPropostaMB.buscarAutor}"
+                                       update="tbAutor"                                                                                                                     
+                                       icon="fa fa-search Fs16 White">                                                                                                                     										       
+								    </p:commandButton>		                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                								   								 
+							        <p:commandButton id="limpar" value="Limpar" />
+							          								      								      								                                                                                                            
+                                 </div>                                                                                               
+                                                                                                                                                                                   
+                                 <p:dataTable  id="tbAutor"
+                                               var="cursor"
+                                               rendered="#{not empty novaPropostaMB.autoresSelecionados}" 
+						                       value="#{novaPropostaMB.autoresSelecionados}" 								                 											            
+						                       style="margin-bottom:0">
+						             <f:facet name="header">
+						               Lista Autores
+						             </f:facet>											        								        										        						                                          
+							         <p:column headerText="Nome" width="20%">
+							   	        <h:outputText value="#{cursor.nome}" />
+							         </p:column>								
+							         <p:column headerText="Nome" width="20%">
+							   	        <h:outputText value="#{cursor.email}" />
+							         </p:column>							       																																		    															    	        												    											       
+					             </p:dataTable>
+                                 								   															   							   												 	  														 						 						     							                         
+                      </div>                      
+                 </div>
+                                     				
+			</div>
+		</div>
+	 </h:form>
+	</f:view> 	
+
+	</ui:define>
+
+</ui:composition>

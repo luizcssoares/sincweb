@@ -1,0 +1,47 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui" template="/template.xhtml">
+
+	<ui:define name="content">
+
+		<div class="ui grid">
+
+			<div class="sixteen wide column">
+				<div class="ui breadcrumb">
+					<a class="section">Início</a> <span class="divider">/</span>
+					<div class="active section">Proposta</div>
+				</div>
+			</div>
+
+			<div class="sixteen wide column">
+                  
+                 <div class="ui card fluid">
+                      <div class="content">                    
+                          <div class="right floated meta">
+                              <div class="ui icon buttons">
+                                <a href="NovaProposta.xhtml" class="ui orange labeled icon button"><i class="plus icon"></i> Cadastrar</a>
+                              </div>
+                          </div>    
+                          <div class="header middle">Segue abaixo Lista de Propostas do Cliente. Clique ao lado para Inserir Nova Proposta</div>                
+                      </div>
+                      <div class="content">
+
+                          <div id="default">                           
+                              <div class="six fields" align="center" style="margmargin-right: 100px">                                
+                                <label class="campo">Nome:</label>
+                                <h:outputText id="nome" value="#{novaPropostaMB.autorSelecionado.nome}" />                                                                                                  
+                                <label class="campo">Email:</label>
+                                <h:outputText id="email" value="#{novaPropostaMB.autorSelecionado.email}" />                                                                                                   							    							   							     										    					  								 							   							    
+							  </div>							 
+						  </div>	                                                                                                                                                                            
+                           												                                                                            
+                      </div>
+                 </div>                    				
+			</div>
+		</div>
+
+	</ui:define>
+
+</ui:composition>
