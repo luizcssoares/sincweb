@@ -67,6 +67,10 @@ public class NovaPropostaMB implements Serializable {
 		this.autores.add(a2);
 		this.autores.add(a3);				
     }
+	
+	public void metodoTeste(){
+	    
+	}
  	
  	public String selecionaAutor() { 		
  	    return "resultado";	
